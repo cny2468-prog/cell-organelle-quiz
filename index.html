@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c5a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23123c5a'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%2327a5ad'/%3E%3C/svg%3E">
+  <title>세포소기관 15초 2지선다 퀴즈</title>
+  <style>
+    :root{--navy:#123c5a;--ink:#183247;--muted:#687d8c;--line:#d6e2e8;--mint:#27a5ad;--mint-bg:#eaf7f6;--yellow:#f3b941;--red:#e46262;--green:#29966a;--paper:#fff;--bg:#eef4f6}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+    button{font:inherit}.hidden{display:none!important}
+    .shell{min-height:100vh;display:flex;flex-direction:column}
+    header{height:68px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 max(20px,calc((100vw - 1040px)/2));gap:14px}
+    .mark{width:38px;height:38px;border:2px solid var(--navy);border-radius:50%;display:grid;place-items:center;font-weight:900;color:var(--navy);position:relative}.mark::after{content:"";position:absolute;width:8px;height:8px;background:var(--mint);border-radius:50%;right:-2px;top:1px}
+    .brand b{display:block;font-size:16px}.brand small{display:block;color:var(--muted);font:700 8px Arial;letter-spacing:.16em;margin-top:2px}.header-note{margin-left:auto;color:var(--muted);font-size:11px}
+    main{width:min(1040px,calc(100% - 32px));margin:auto;padding:38px 0}
+    .start{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;min-height:610px}
+    .eyebrow{font:800 10px Arial;color:var(--mint);letter-spacing:.2em;margin:0 0 16px}.start h1{font-size:clamp(39px,5vw,66px);line-height:1.05;letter-spacing:-.065em;margin:0}.start h1 em{font-style:normal;color:var(--mint)}
+    .lead{font-size:15px;line-height:1.8;color:var(--muted);margin:24px 0 30px;max-width:560px}
+    .mode-list{display:grid;gap:10px}.mode-btn{display:flex;align-items:center;gap:14px;width:100%;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;cursor:pointer;transition:.18s}.mode-btn:hover{transform:translateY(-2px);border-color:var(--mint);box-shadow:0 8px 24px #173c5a12}.mode-btn strong{display:block;font-size:14px}.mode-btn small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.mode-btn span{margin-left:auto;color:var(--mint);font-size:20px}.mode-btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}.mode-btn.primary small{color:#c8d8e2}.mode-btn.primary span{color:#61ddc4}
+    .start-visual{background:#fff;border:1px solid var(--line);border-radius:28px;min-height:470px;display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 24px 60px #18344912}.start-visual::before,.start-visual::after{content:"";position:absolute;border:1px dashed #b9d0d8;border-radius:50%;width:410px;height:410px}.start-visual::after{width:310px;height:310px}.cell{width:270px;height:220px;border:7px solid var(--mint);border-radius:49% 44% 52% 46%;background:#e7f8f4;position:relative;z-index:1;box-shadow:inset 0 0 35px #75d9c74d}.cell .nucleus{position:absolute;width:82px;height:82px;border:5px double #8275c2;border-radius:50%;background:#dcd4f5;left:55px;top:64px}.cell .nucleus::after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:#8275c2;left:25px;top:26px}.cell .mito{position:absolute;width:78px;height:38px;border:4px solid #e77983;border-radius:50%;background:#ffd9dc;right:35px;top:46px;transform:rotate(16deg)}.cell .mito::after{content:"≈";display:grid;place-items:center;height:100%;color:#c84c5c;font-weight:900}.cell .golgi{position:absolute;right:45px;bottom:50px;width:75px;height:55px;border-bottom:8px solid #e2aa2c;border-radius:50%;box-shadow:0 9px 0 -1px #efc65c,0 18px 0 -3px #f5dda0}.tag{position:absolute;z-index:2;background:#fff;border-left:3px solid var(--mint);padding:10px 13px;box-shadow:0 8px 20px #123c5a15;font-size:10px}.tag b{display:block;margin-bottom:3px}.tag.one{right:20px;top:74px}.tag.two{left:20px;bottom:70px;border-color:var(--yellow)}
+    .quiz{max-width:820px;margin:0 auto}.quiz-top{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:16px}.progress-copy{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:8px}.progress-copy b{color:var(--navy)}.track{height:7px;border-radius:10px;background:#dce7eb;overflow:hidden}.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#65d8bd);transition:width .35s}.stats{display:flex;gap:9px}.stat{min-width:75px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;text-align:center}.stat span{display:block;font-size:9px;color:var(--muted)}.stat b{font:800 18px Arial;color:var(--navy)}
+    .quiz-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 34px;box-shadow:0 18px 50px #173c5a10}.type{display:inline-flex;align-items:center;gap:7px;color:var(--mint);background:var(--mint-bg);border-radius:999px;padding:7px 11px;font-size:10px;font-weight:800}.question{font-size:24px;line-height:1.45;letter-spacing:-.035em;margin:17px 0 20px}.figure{height:360px;border:1px solid #d8e4e9;border-radius:16px;background:#fff;margin-bottom:12px;overflow:hidden;position:relative}.figure::after{content:"수업 PPT 원본 그림 · 명칭 가림";position:absolute;z-index:2;right:10px;bottom:9px;background:#123c5ad9;color:#fff;border-radius:999px;padding:5px 8px;font-size:8px;letter-spacing:.04em}.figure canvas{display:block;position:absolute;left:50%;top:50%;max-width:100%;max-height:100%;width:auto;height:auto;transform:translate(-50%,-50%)}.clue{border:1px solid #cfe2e5;border-left:4px solid var(--mint);border-radius:10px;background:#f3f9f9;padding:13px 16px;margin-bottom:18px;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;line-height:1.55;color:#2e526a}.clue::before{content:"PPT 핵심";white-space:nowrap;border-radius:999px;background:#dcefee;color:#147f83;padding:5px 8px;font-size:9px}
+    .timer-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}.timer-row b{font:900 24px Arial;color:var(--navy);min-width:44px}.timer-track{height:9px;flex:1;border-radius:999px;background:#dce7eb;overflow:hidden}.timer-track i{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--yellow),var(--mint));transform-origin:left;transition:width .08s linear}.timer-track i.urgent{background:var(--red)}.target{margin-top:12px;padding:10px 13px;border-radius:10px;background:#fff7df;border:1px solid #efd99d;color:#795b13;font-size:12px;font-weight:800}.target::before{content:"묻는 대상 · ";color:#b47b00}
+    .binary-answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.binary-answer{min-height:62px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);padding:13px 16px;font-size:16px;font-weight:800;cursor:pointer;transition:.16s}.binary-answer:hover:not(:disabled){border-color:var(--mint);background:#f3fbfa;transform:translateY(-1px)}.binary-answer.correct{border-color:var(--green);background:#ebf8f2;color:#14704d}.binary-answer.incorrect{border-color:var(--red);background:#fff0f0;color:#a23d3d}.binary-answer.dim{opacity:.5}.binary-answer:disabled{cursor:default}
+    .feedback{margin-top:12px;border-radius:11px;padding:14px 16px;font-size:12px;line-height:1.55;display:flex;gap:10px;align-items:center}.feedback.good{background:#ebf8f2;color:#176f4f}.feedback.bad{background:#fff0f0;color:#9c3838}.feedback b{font-size:14px;white-space:nowrap}
+    .wrong-overlay{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:#102f46b8;backdrop-filter:blur(7px)}.wrong-modal{width:min(560px,calc(100vw - 36px));background:#fff;border:3px solid #ef6b6b;border-radius:24px;padding:30px 32px 26px;box-shadow:0 28px 90px #061b2c66;text-align:center}.wrong-mark{display:inline-flex;align-items:center;justify-content:center;min-width:92px;height:34px;padding:0 16px;border-radius:999px;background:#ffe4e4;color:#b53535;font-size:14px;font-weight:900}.wrong-modal h2{margin:17px 0 9px;font-size:30px;letter-spacing:-.04em;color:#812e2e}.wrong-correct{margin:0;padding:15px;border-radius:12px;background:#fff1f1;color:#9e2f2f;font-size:20px;font-weight:900}.wrong-explain{margin:17px 0 22px;font-size:17px;line-height:1.75;color:#263f51;word-break:keep-all}.wrong-next{width:100%;height:54px;border:0;border-radius:12px;background:#163f5b;color:#fff;font-size:15px;font-weight:900;cursor:pointer}.wrong-wait{display:block;margin-top:10px;color:#728492;font-size:11px}.wrong-progress{height:5px;margin-top:12px;border-radius:999px;background:#e4ebef;overflow:hidden}.wrong-progress i{display:block;width:100%;height:100%;background:#ef6b6b;transform-origin:left;animation:wrong-countdown 5s linear forwards}@keyframes wrong-countdown{to{transform:scaleX(0)}}
+    .result{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px;text-align:center;box-shadow:0 20px 55px #123c5a10}.result-badge{width:88px;height:88px;border-radius:50%;background:var(--mint-bg);display:grid;place-items:center;margin:0 auto 18px;font-size:40px}.result h2{font-size:35px;margin:0}.result>p{color:var(--muted);line-height:1.7}.score-ring{width:150px;height:150px;border:12px solid #dcebea;border-top-color:var(--mint);border-right-color:var(--mint);border-radius:50%;display:grid;place-items:center;margin:28px auto}.score-ring b{font:900 36px Arial}.score-ring span{font-size:12px;color:var(--muted)}.brag-message{margin:0 0 24px!important;padding:14px 18px;border:1px solid #8ed8c8;border-radius:14px;background:#eaf8f4;color:#176f4f!important;font-weight:900;font-size:15px;line-height:1.65!important;word-break:keep-all}.summary{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:24px 0}.summary div{padding:15px;border-right:1px solid var(--line)}.summary div:last-child{border:0}.summary b{display:block;font:800 20px Arial}.summary small{color:var(--muted)}.result-actions{display:flex;gap:10px}.result-actions button{flex:1;border:1px solid var(--line);border-radius:11px;padding:14px;background:#fff;cursor:pointer;font-weight:800}.result-actions .again{background:var(--navy);color:#fff;border-color:var(--navy)}
+    @media(max-width:760px){header{height:58px;padding:0 16px}.header-note{display:none}main{width:min(calc(100% - 32px),620px);padding:20px 0}.start{display:block;min-height:0}.start h1{font-size:43px}.lead{margin:18px 0 22px}.start-visual{display:none}.quiz-top{grid-template-columns:1fr}.stats{justify-content:flex-end}.quiz-card{padding:22px 16px;border-radius:15px}.question{font-size:20px}.figure{height:265px}.clue{font-size:11px;padding:11px 12px;align-items:flex-start}.clue::before{margin-top:1px}.binary-answers{grid-template-columns:1fr}.result{padding:34px 20px}.result-actions{display:grid}.summary div{padding:12px 5px}.summary small{font-size:9px}.wrong-modal{padding:24px 20px 21px;border-radius:19px}.wrong-modal h2{font-size:26px}.wrong-correct{font-size:18px}.wrong-explain{font-size:15px;line-height:1.65}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header><div class="mark">C</div><div class="brand"><b>세포 구조 퀴즈</b><small>15-SECOND RAPID QUIZ</small></div><div class="header-note">비상교육 「세포와 물질대사 1-2」 수업 PPT 28–34쪽 기반</div></header>
+    <main>
+      <section class="start" id="startScreen">
+        <div><p class="eyebrow">15-SECOND RAPID QUIZ</p><h1>무엇을 묻는지,<br><em>정확히 보고 선택!</em></h1><p class="lead">세포소기관과 원핵·동물·식물 세포를 비교합니다. 부분 명칭 문제에서는 그림의 ①·② 표시를 보고 답하세요.</p><div class="mode-list"><button class="mode-btn primary" id="startBtn"><div><strong>2지선다 퀴즈 시작</strong><small>20문항 · 문항당 15초 · 최대 2,000점</small></div><span>→</span></button></div></div>
+        <div class="start-visual" aria-hidden="true"><div class="cell"><i class="nucleus"></i><i class="mito"></i><i class="golgi"></i></div><div class="tag one"><b>제한 시간</b>문항당 15초</div><div class="tag two"><b>배점</b>빠를수록 최대 100점</div></div>
+      </section>
+      <section class="quiz hidden" id="quizScreen">
+        <div class="quiz-top"><div><div class="progress-copy"><span id="progressText">문제 1 / 10</span><b id="percentText">0%</b></div><div class="track"><i id="progressBar"></i></div></div><div class="stats"><div class="stat"><span>누적 점수</span><b id="score">0</b></div><div class="stat"><span>연속 정답</span><b id="streak">0</b></div></div></div>
+        <article class="quiz-card"><div class="timer-row"><b id="timerText">15초</b><div class="timer-track"><i id="timerBar"></i></div></div><span class="type" id="typeLabel">세포소기관 명칭</span><div class="target" id="targetText">그림 전체</div><h2 class="question" id="question"></h2><div class="figure" id="figure"><canvas id="organelleCanvas" role="img" aria-label="수업 PPT의 세포소기관 그림"></canvas></div><div class="clue" id="clue"></div><div class="binary-answers" id="answers"></div><div class="feedback hidden" id="feedback" aria-live="polite"></div></article>
+      </section>
+      <section class="result hidden" id="resultScreen"><div class="result-badge" id="resultBadge">⚡</div><p class="eyebrow">QUIZ COMPLETE</p><h2 id="resultTitle">퀴즈 완료!</h2><p id="resultMessage"></p><p class="brag-message hidden" id="bragMessage">총점이 1,500점 이상이면 생명과학 실험실 라운지에 캡쳐해서 자랑해보세요!</p><div class="score-ring"><div><b id="finalScore">0</b><span id="maxScore"> / 2,000점</span></div></div><div class="summary"><div><b id="correctCount">0</b><small>정답</small></div><div><b id="wrongCount">0</b><small>오답·시간 초과</small></div><div><b id="bestStreak">0</b><small>최고 연속</small></div></div><div class="result-actions"><button id="retryWrong">오답만 다시 풀기</button><button class="again" id="restart">처음부터 다시</button></div></section>
+    </main>
+    <div class="wrong-overlay hidden" id="wrongOverlay" role="dialog" aria-modal="true" aria-labelledby="wrongTitle"><div class="wrong-modal"><span class="wrong-mark" id="wrongMark">오답</span><h2 id="wrongTitle">정답을 확인하세요</h2><p class="wrong-correct" id="wrongCorrect"></p><p class="wrong-explain" id="wrongExplain"></p><button class="wrong-next" id="wrongNext">확인하고 다음 문제</button><small class="wrong-wait">5초 후 자동으로 다음 문제로 이동합니다.</small><div class="wrong-progress"><i id="wrongProgress"></i></div></div></div>
+  </div>
+  <script>
+    const ITEMS=[
+      {name:'핵',img:'ppt-nucleus.png',focus:'28쪽 · 핵막(외막·내막) · 핵공 · 염색질 · 인',structure:{q:'PPT 그림에 제시된 핵의 구조에 대한 설명으로 옳은 것은?',o:['외막과 내막의 이중막이며 핵막 곳곳에 핵공이 있다.','단일막 주머니이며 내부에 가수분해효소가 있다.','막이 없고 크기가 다른 두 단위체로 이루어진다.','타이라코이드가 쌓여 그라나를 이룬다.'],a:0,e:'핵막은 외막과 내막의 이중막이고, 핵공을 통해 핵과 세포질 사이에 물질이 이동합니다.'},function:{q:'PPT에서 설명한 핵의 주요 기능은 무엇인가?',o:['세포의 구조와 기능을 결정하고 생명활동을 조절한다.','세포호흡으로 ATP를 생성한다.','단백질과 지질을 가공하여 분비한다.','물을 흡수해 삼투압만 조절한다.'],a:0,e:'핵은 DNA의 유전정보를 바탕으로 세포의 구조와 기능을 결정하고 생명활동을 조절합니다.'}},
+      {name:'라이보솜',img:'ppt-ribosome.png',focus:'28쪽 · rRNA와 단백질 · 대단위체 · 소단위체 · 막 없음',structure:{q:'PPT 그림 속 라이보솜의 구조적 특징으로 옳은 것은?',o:['rRNA와 단백질로 이루어지며 크기가 다른 두 단위체로 구성된다.','외막과 내막 사이에 크리스타가 형성된다.','납작한 시스터나가 여러 층으로 쌓여 있다.','단일막 안에 가수분해효소가 저장된다.'],a:0,e:'라이보솜은 rRNA와 단백질로 이루어진 작은 알갱이이며, 막이 없고 대단위체와 소단위체로 구성됩니다.'},function:{q:'라이보솜이 담당하는 기능은 무엇인가?',o:['DNA의 유전정보에 따라 단백질을 합성한다.','빛에너지를 포도당의 화학 에너지로 바꾼다.','손상된 세포소기관을 분해한다.','세포의 형태를 유지하는 단단한 벽을 만든다.'],a:0,e:'라이보솜은 DNA의 유전정보에 따라 단백질을 합성하며, 단백질 합성이 활발한 세포에 많습니다.'}},
+      {name:'소포체',img:'ppt-er.png',focus:'29쪽 · 단일막 · 납작한 주머니와 관 · 거친면소포체 · 매끈면소포체',structure:{q:'PPT 그림을 바탕으로 소포체의 구조를 바르게 설명한 것은?',o:['납작한 주머니와 관이 복잡하게 연결된 단일막 구조이며 핵의 외막과 연결된다.','이중막 안쪽에 타이라코이드와 스트로마가 있다.','막이 없는 단백질 섬유가 그물처럼 얽혀 있다.','두꺼운 셀룰로스층이 세포막 바깥을 둘러싼다.'],a:0,e:'소포체는 납작한 주머니와 관이 복잡하게 연결된 단일막 구조이며, 소포체 막은 핵의 외막과 연결됩니다.'},function:{q:'거친면소포체와 매끈면소포체의 특징을 바르게 짝지은 것은?',o:['거친면소포체―단백질 가공·운반 / 매끈면소포체―인지질·스테로이드 합성 및 해독','거친면소포체―광합성 / 매끈면소포체―세포호흡','거친면소포체―노폐물 저장 / 매끈면소포체―DNA 복제','거친면소포체―세포 형태 유지 / 매끈면소포체―가수분해'],a:0,e:'거친면소포체는 표면에 라이보솜이 붙어 단백질을 가공·운반하고, 매끈면소포체는 지질 합성·해독·Ca²⁺ 저장에 관여합니다.'}},
+      {name:'골지체',img:'ppt-golgi.png',focus:'29쪽 · 단일막 · 납작한 시스터나 · 운반 소낭',structure:{q:'PPT 그림에 나타난 골지체의 구조적 특징은?',o:['납작한 시스터나가 여러 층으로 쌓인 단일막 구조이다.','외막과 내막의 이중막이며 핵공이 있다.','막이 없고 대단위체와 소단위체로 나뉜다.','셀룰로스가 주성분인 두꺼운 벽이다.'],a:0,e:'골지체는 편평하고 넓적한 자루 모양의 시스터나가 층층이 쌓인 단일막 구조입니다.'},function:{q:'골지체의 기능에 대한 설명으로 옳은 것은?',o:['소포체에서 온 단백질과 지질을 가공하여 다른 곳으로 수송하거나 세포 밖으로 분비한다.','세포호흡으로 포도당의 에너지를 ATP로 바꾼다.','rRNA와 단백질로 라이보솜 단위체를 만든다.','물을 흡수하여 세포 내 삼투압만 조절한다.'],a:0,e:'골지체는 소포체에서 온 단백질과 지질을 가공하고, 운반 소낭에 담아 세포 안의 다른 곳이나 세포 밖으로 보냅니다.'}},
+      {name:'라이소솜',img:'ppt-lysosome.png',focus:'30쪽 · 골지체에서 형성 · 작은 주머니 · 단일막 · 가수분해효소',structure:{q:'PPT에서 제시한 라이소솜의 구조와 생성 과정으로 옳은 것은?',o:['골지체의 일부가 떨어져 나와 만들어진 단일막의 작은 주머니이다.','핵의 외막이 접혀 만들어진 이중막 구조이다.','타이라코이드가 겹쳐 만들어진 막 없는 구조이다.','단백질 섬유가 그물처럼 연결된 구조이다.'],a:0,e:'라이소솜은 골지체의 일부가 떨어져 나와 형성된 작은 주머니 모양의 단일막 세포소기관입니다.'},function:{q:'라이소솜 속 가수분해효소가 담당하는 작용은?',o:['이물질, 손상된 세포소기관, 노폐물 등을 분해한다.','빛에너지를 흡수하여 포도당을 합성한다.','유전정보에 따라 단백질을 합성한다.','세포막 바깥에서 세포를 단단하게 지지한다.'],a:0,e:'라이소솜의 가수분해효소는 세포 안으로 들어온 이물질과 손상된 세포소기관, 노폐물 등을 분해합니다.'}},
+      {name:'마이토콘드리아',img:'ppt-mitochondria.png',focus:'31쪽 · 외막 · 내막 · 크리스타 · 바탕질 · 자체 DNA와 라이보솜',structure:{q:'PPT 그림 속 마이토콘드리아의 구조를 바르게 설명한 것은?',o:['외막과 내막의 이중막이며 내막이 접혀 크리스타를 형성한다.','단일막 안에 그라나와 스트로마가 구분된다.','막이 없고 세 종류의 단백질 섬유로 구성된다.','납작한 시스터나 표면에 라이보솜이 붙어 있다.'],a:0,e:'마이토콘드리아는 이중막 구조이고, 내막이 안쪽으로 접혀 크리스타를 형성하며 안쪽 공간을 바탕질이라고 합니다.'},function:{q:'마이토콘드리아에서 일어나는 에너지 전환은?',o:['세포호흡으로 포도당의 화학 에너지를 ATP의 화학 에너지로 전환한다.','광합성으로 빛에너지를 포도당의 화학 에너지로 전환한다.','가수분해로 노폐물을 무기물로만 전환한다.','삼투로 물의 에너지를 단백질의 화학 에너지로 전환한다.'],a:0,e:'마이토콘드리아에서는 세포호흡이 일어나 유기물의 화학 에너지가 ATP의 화학 에너지로 전환됩니다.'}},
+      {name:'엽록체',img:'ppt-chloroplast.png',focus:'31쪽 · 이중막 · 타이라코이드 · 그라나 · 스트로마 · 자체 DNA와 라이보솜',structure:{q:'PPT 그림 속 엽록체 내부 구조에 대한 설명으로 옳은 것은?',o:['타이라코이드가 쌓여 그라나를 이루고, 그라나를 제외한 내막 안쪽 공간은 스트로마이다.','내막이 접혀 크리스타를 이루고 안쪽은 바탕질이다.','시스터나가 쌓이고 가장자리에서 운반 소낭이 떨어진다.','단일막 주머니 안에 가수분해효소가 들어 있다.'],a:0,e:'엽록체에서 납작한 주머니 모양의 타이라코이드가 쌓인 구조가 그라나이며, 나머지 내막 안쪽 공간이 스트로마입니다.'},function:{q:'엽록체의 기능에 대한 설명으로 옳은 것은?',o:['광합성으로 빛에너지를 화학 에너지로 전환하여 유기물에 저장한다.','세포호흡으로 ATP만 분해하여 열을 만든다.','단백질과 지질을 가공하여 세포 밖으로 분비한다.','가수분해효소로 손상된 세포소기관을 분해한다.'],a:0,e:'엽록체는 광합성을 통해 빛에너지를 화학 에너지로 전환하여 포도당과 같은 유기물에 저장합니다.'}},
+      {name:'액포',img:'ppt-vacuole.png',focus:'32쪽 · 단일막 주머니 · 성숙한 식물 세포에서 크게 발달',structure:{q:'PPT 사진에 나타난 액포의 구조적 특징은?',o:['막으로 둘러싸인 단일막 주머니이며 성숙한 식물 세포에서 크게 발달한다.','이중막이며 내막이 크리스타를 형성한다.','막이 없으며 두 개의 단위체로 구성된다.','셀룰로스로 된 1차·2차 층이 세포막 바깥에 있다.'],a:0,e:'액포는 단일막으로 둘러싸인 주머니 모양이며, 성숙한 식물 세포에서 매우 크게 발달합니다.'},function:{q:'PPT에서 설명한 액포의 기능으로 옳지 않은 것은?',o:['세포호흡을 통해 ATP를 합성한다.','물을 흡수하여 세포 내 수분량과 삼투압을 조절한다.','노폐물과 수용성 색소 등을 저장한다.','식물 세포의 형태 유지에 관여한다.'],a:0,e:'ATP 생성은 마이토콘드리아의 기능입니다. 액포는 형태 유지, 수분량·삼투압 조절, 노폐물과 수용성 색소 저장에 관여합니다.'}},
+      {name:'세포벽',img:'ppt-cell-wall.png',focus:'32쪽 · 세포막 바깥 · 1차 세포벽 · 2차 세포벽 · 셀룰로스',structure:{q:'PPT 그림을 바탕으로 식물 세포벽의 구조를 바르게 설명한 것은?',o:['세포막 바깥에 있으며, 2차 세포벽은 세포막과 1차 세포벽 사이에 형성된다.','세포막 안쪽에 있으며 인지질 이중층으로만 이루어진다.','핵막 바깥에 있으며 rRNA와 단백질이 주성분이다.','액포 안쪽에 있으며 타이라코이드가 쌓여 있다.'],a:0,e:'세포벽은 세포막 바깥에 있고, 세포가 성숙하면 세포막과 1차 세포벽 사이에 2차 세포벽이 형성됩니다.'},function:{q:'식물 세포벽의 주요 기능은 무엇인가?',o:['세포를 보호하고 세포의 형태를 유지한다.','DNA의 유전정보에 따라 단백질을 합성한다.','단백질과 지질을 가공하여 분비한다.','빛에너지를 포도당의 화학 에너지로 바꾼다.'],a:0,e:'식물 세포벽은 주성분인 셀룰로스로 이루어져 세포를 보호하고 형태를 유지합니다.'}},
+      {name:'세포골격',img:'ppt-cytoskeleton.png',focus:'32쪽 · 미세소관 · 중간섬유 · 미세섬유 · 단백질 섬유 그물',structure:{q:'PPT 그림에 제시된 세포골격의 구조적 특징은?',o:['미세소관, 중간섬유, 미세섬유 등의 단백질 섬유가 세포질에 그물처럼 퍼져 있다.','외막과 내막 사이에 핵공이 규칙적으로 배열된다.','단일막 시스터나가 층층이 쌓여 있다.','타이라코이드 막이 쌓여 그라나를 이룬다.'],a:0,e:'세포골격은 굵기가 다른 미세소관, 중간섬유, 미세섬유가 세포질에 그물처럼 얽힌 구조입니다.'},function:{q:'세포골격의 기능으로 옳은 것은?',o:['세포의 형태를 결정하고 세포소기관을 특정 위치에 고정하거나 이동시킨다.','세포호흡을 통해 ATP를 합성한다.','가수분해효소를 이용해 이물질을 분해한다.','물을 저장하여 식물 세포의 삼투압만 조절한다.'],a:0,e:'세포골격은 세포의 뼈대 역할을 하며, 세포소기관을 고정하거나 이동시키는 데 관여합니다.'}}
+    ];
+    const S={
+      nucleus:{name:'핵',img:'ppt-nucleus-clean.png',focus:'외막 · 내막 · 핵공 · 염색질 · 인'},
+      ribosome:{name:'라이보솜',img:'ppt-ribosome-clean.png',focus:'막 없음 · 대단위체 · 소단위체 · 단백질 합성'},
+      er:{name:'소포체',img:'ppt-er.png',crop:[280,90,300,250],focus:'단일막 · 거친면소포체 · 매끈면소포체'},
+      erCompare:{name:'소포체',img:'ppt-er-comparison-clean.png',focus:'거친면소포체 · 매끈면소포체 · 표면 라이보솜 유무'},
+      golgi:{name:'골지체',img:'ppt-golgi.png',crop:[360,80,320,300],focus:'단일막 · 시스터나 · 운반 소낭'},
+      golgiPathway:{name:'골지체',img:'ppt-golgi-pathway-clean.png',focus:'단일막 · 단백질과 지질 가공 · 운반 소낭'},
+      lysosome:{name:'라이소솜',img:'ppt-lysosome.png',crop:[20,0,440,580],focus:'단일막 · 가수분해효소 · 세포내소화'},
+      lysosomeClean:{name:'라이소솜',img:'ppt-lysosome-clean.png',focus:'단일막 · 가수분해효소 · 세포내소화'},
+      mitochondria:{name:'마이토콘드리아',img:'ppt-mitochondria-clean.png',focus:'이중막 · 크리스타 · 바탕질 · 세포호흡'},
+      chloroplast:{name:'엽록체',img:'ppt-chloroplast.png',crop:[55,180,525,280],focus:'이중막 · 타이라코이드 · 그라나 · 스트로마'},
+      chloroplastClean:{name:'엽록체',img:'ppt-chloroplast-clean.png',focus:'이중막 · 타이라코이드 · 그라나 · 스트로마'},
+      vacuole:{name:'액포',img:'ppt-vacuole-clean.png',focus:'단일막 · 수분량과 삼투압 조절 · 물질 저장'},
+      wall:{name:'세포벽',img:'ppt-cell-wall.png',crop:[160,0,440,380],focus:'1차 세포벽 · 2차 세포벽 · 셀룰로스'},
+      skeleton:{name:'세포골격',img:'ppt-cytoskeleton.png',crop:[0,0,900,651],focus:'미세소관 · 중간섬유 · 미세섬유'},
+      skeletonNetwork:{name:'세포골격',img:'ppt-cytoskeleton-network-clean.png',focus:'세포 형태 유지 · 세포소기관 고정과 이동'},
+      roughER:{name:'거친면소포체',topic:'소포체',img:'ppt-rough-er.png',crop:[125,0,400,285]},
+      pathway:{name:'라이소솜',img:'ppt-cell-pathway.png',crop:[450,330,260,260]},
+      wallTem:{name:'세포벽',img:'ppt-cell-wall-tem-clean.png'}
+      ,cellTypes:{name:'세포 유형 비교',img:'ppt-cell-types-clean.png',focus:'원핵세포 · 동물 세포 · 식물 세포'},
+      prokDNA:{name:'세포 유형 비교',img:'ppt-prokaryote-dna-clean.png',focus:'하나의 원형 DNA · 플라스미드'},
+      prokEukDNA:{name:'세포 유형 비교',img:'ppt-prok-euk-dna-clean.png',focus:'원형 DNA · 선형 DNA · 히스톤 단백질'}
+    };
+    const Q=(source,type,target,q,options,answer,explain,marker=null,view=null)=>({source,type,target,q,options,answer,explain,marker,view,topic:source.topic||source.name||target});
+    const QUESTION_BANK=[
+      Q(S.nucleus,'세포소기관 명칭','PPT 원본에서 명칭과 지시선만 지운 핵 전체','그림 전체에 나타난 이 세포소기관의 명칭은?',['핵','라이소솜'],0,'핵막으로 둘러싸이고 내부에 염색질과 인이 있는 핵입니다.'),
+      Q(S.ribosome,'세포소기관 명칭','PPT 원본에서 명칭과 지시선만 지운 대단위체와 소단위체','대단위체와 소단위체로 이루어진 이 세포소기관의 명칭은?',['라이보솜','골지체'],0,'rRNA와 단백질로 이루어진 막 없는 라이보솜입니다.'),
+      Q(S.er,'세포소기관 명칭','그림 가운데 연결된 막주머니와 관 전체','거친면과 매끈면으로 구분되는 이 세포소기관의 명칭은?',['소포체','세포골격'],0,'납작한 주머니와 관이 연결된 단일막 구조인 소포체입니다.',null,{crop:[280,135,300,205]}),
+      Q(S.lysosomeClean,'세포소기관 명칭','PPT 원본에서 주변 요소와 지시선만 지운 막으로 둘러싸인 작은 분해 주머니','가수분해효소를 가진 이 세포소기관의 명칭은?',['라이소솜','액포'],0,'물질을 분해하는 가수분해효소가 들어 있는 라이소솜입니다.',null,{crop:[300,300,650,650]}),
+      Q(S.skeleton,'세포 내 구조 명칭','그림에 따로 제시된 세 종류의 단백질 섬유 전체','미세소관·중간섬유·미세섬유를 합한 구조의 명칭은?',['세포골격','소포체'],0,'세 종류의 단백질 섬유로 이루어진 세포골격입니다.',null,{size:[900,420],layers:[[[980,40,260,150],[40,30,240,135]],[[980,285,260,125],[330,145,240,115]],[[980,485,260,85],[620,260,240,78]]]}),
+
+      Q({img:'ppt-nucleus.png',topic:'핵'},'부분 명칭','PPT 전자현미경 사진에서 빨간 ①로 정확히 표시한 핵막의 구멍 한 개','①로 표시된, 핵과 세포질 사이의 물질 이동 통로 명칭은?',['핵공','크리스타'],0,'핵막에 난 물질 이동 통로는 핵공입니다.',[177,125,'①','#e34141',13],{crop:[968,165,305,245]}),
+      Q(S.golgi,'부분 명칭','확대된 골지체의 빨간 ① 막주머니','①로 표시된 납작하고 넓적한 자루 모양 구조의 명칭은?',['시스터나','타이라코이드'],0,'골지체를 이루는 편평한 막주머니는 시스터나입니다.',[140,110],{crop:[360,90,310,250]}),
+      Q(S.mitochondria,'부분 명칭','PPT 원본에서 명칭과 지시선을 지운 마이토콘드리아 내막의 빨간 ① 주름','①로 표시된 내막이 안쪽으로 접힌 주름의 명칭은?',['크리스타','그라나'],0,'마이토콘드리아 안쪽의 막이 접혀 들어간 구조는 크리스타입니다.',[235,210,'①','#e34141',14],{crop:[520,240,600,430]}),
+      Q(S.chloroplastClean,'부분 명칭','PPT 원본 엽록체에서 명칭과 지시선을 지운 뒤 빨간 ①로 표시한 원반 더미','①로 표시된 타이라코이드가 층층이 쌓인 구조의 명칭은?',['그라나','바탕질'],0,'타이라코이드가 포개져 쌓인 구조는 그라나입니다.',[230,300],{crop:[400,300,650,520]}),
+      Q(S.wallTem,'부분 명칭','PPT 전자현미경 사진에서 명칭과 지시선을 지운 빨간 ① 두꺼운 층','①로 표시된 성숙한 식물 세포의 두껍고 단단한 층 명칭은?',['2차 세포벽','핵막'],0,'세포막과 1차 세포벽 사이에 형성되는 층은 2차 세포벽입니다.',[425,270],{crop:[300,160,650,520]}),
+
+      Q(S.erCompare,'구조 구분','빨간 ① 영역과 파란 ② 영역의 소포체','①과 ②의 명칭을 바르게 짝지은 것은?',['① 거친면소포체 · ② 매끈면소포체','① 매끈면소포체 · ② 거친면소포체'],0,'①은 표면에 라이보솜 알갱이가 붙어 있는 거친면소포체이고, ②는 표면에 라이보솜이 없는 매끈면소포체입니다.',[[620,310,'①','#e34141'],[600,660,'②','#2685c7']],{crop:[180,30,1180,900]}),
+      Q(S.golgiPathway,'특징·기능','PPT 물질 이동 장면에서 주변 요소와 지시선을 지운 골지체 및 운반 소낭','골지체가 단백질과 지질에 하는 작용으로 옳은 것은?',['가공하여 수송·분비','분해하여 ATP 생성'],0,'골지체는 단백질과 지질을 가공해 수송하거나 세포 밖으로 분비합니다.',null,{crop:[170,80,930,1050]}),
+      Q(S.lysosome,'특징·기능','전자현미경 사진 속 둥근 라이소솜 무리','라이소솜의 기능으로 옳은 것은?',['이물질과 손상된 세포소기관 분해','DNA 유전정보 저장'],0,'라이소솜은 가수분해효소로 이물질과 손상된 세포소기관을 분해합니다.',null,{crop:[20,20,260,520]}),
+      Q(S.vacuole,'특징·기능','PPT 원본 전자현미경 사진에서 명칭만 지운 큰 액포','액포의 기능으로 옳은 것은?',['수분량·삼투압 조절과 물질 저장','세포호흡으로 ATP 생성'],0,'액포는 수분량과 삼투압을 조절하며 노폐물과 수용성 색소를 저장합니다.'),
+      Q(S.skeletonNetwork,'특징·기능','PPT 세포 내부 장면에서 주변 소기관을 지운 주황색 가지형 세포골격 섬유망','세포골격의 기능으로 옳은 것은?',['세포 형태 유지와 소기관 이동','광합성으로 포도당 합성'],0,'세포골격은 세포 형태를 유지하고 세포소기관을 고정하거나 이동시킵니다.',null,{crop:[20,20,1200,780]}),
+
+      Q(S.cellTypes,'세포 유형 비교','왼쪽의 세균과 가운데·오른쪽의 진핵세포','왼쪽 세포를 가운데·오른쪽 세포와 구분하는 핵심 특징은?',['핵막과 막성 세포소기관이 없다','세포막과 라이보솜이 없다'],0,'원핵세포는 핵막과 막성 세포소기관이 없지만, 세포막·유전물질·라이보솜은 가지고 있습니다.'),
+      Q(S.cellTypes,'세포 유형 비교','가운데에 단독으로 확대한 둥근 세포 전체','이 세포의 명칭은?',['동물 세포','식물 세포'],0,'세포벽·엽록체·큰 액포가 없고 둥근 형태로 제시된 진핵세포는 동물 세포입니다.',null,{crop:[760,20,650,720]}),
+      Q(S.cellTypes,'세포 유형 비교','오른쪽에 단독으로 확대한 각진 세포 전체','이 세포의 명칭은?',['식물 세포','동물 세포'],0,'세포벽·엽록체·큰 액포가 보이는 각진 진핵세포는 식물 세포입니다.',null,{crop:[1340,10,720,720]}),
+      Q(S.prokDNA,'유전물질 비교','세균과 확대된 유전물질 및 작은 원형 DNA','이 원핵세포의 유전물질 특징으로 옳은 것은?',['하나의 원형 DNA를 가지며 일부는 플라스미드가 있다','여러 개의 선형 DNA가 핵막 안에 들어 있다'],0,'원핵세포는 하나의 원형 DNA를 가지며, 일부는 플라스미드라는 작은 원형 DNA를 추가로 가집니다.'),
+      Q(S.prokEukDNA,'원핵·진핵 비교','왼쪽 원핵세포의 유전물질 확대 그림','왼쪽 원핵세포의 DNA 모양은?',['원형 DNA','선형 DNA'],0,'원핵세포는 핵막 없이 원형 DNA를 가집니다. 진핵세포의 DNA는 선형입니다.')
+    ];
+    const $=s=>document.querySelector(s), shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}, shuffleSeparated=a=>{const pool=shuffle(a),out=[],counts={};pool.forEach(item=>counts[item.topic]=(counts[item.topic]||0)+1);while(pool.length){const previous=out.at(-1)?.topic,eligible=pool.map((item,i)=>({item,i})).filter(x=>x.item.topic!==previous);if(!eligible.length){out.push(...pool.splice(0));break}const most=Math.max(...eligible.map(x=>counts[x.item.topic])),choices=eligible.filter(x=>counts[x.item.topic]===most),chosen=choices[Math.floor(Math.random()*choices.length)],next=pool.splice(chosen.i,1)[0];counts[next.topic]--;out.push(next)}return out};
+    const screens={start:$('#startScreen'),quiz:$('#quizScreen'),result:$('#resultScreen')};
+    const LIMIT=15000;
+    let questions=[],index=0,score=0,streak=0,best=0,wrong=[],locked=false,timerId=0,nextId=0,deadline=0,renderToken=0,startedToken=0;
+    function show(name){Object.entries(screens).forEach(([k,v])=>v.classList.toggle('hidden',k!==name));window.scrollTo({top:0,behavior:'smooth'})}
+    function start(custom){clearInterval(timerId);clearTimeout(nextId);questions=shuffleSeparated(custom||QUESTION_BANK);index=0;score=0;streak=0;best=0;wrong=[];show('quiz');render()}
+    function beginTimer(token){
+      if(token!==renderToken||startedToken===token||locked)return;startedToken=token;
+      deadline=performance.now()+LIMIT;
+      clearInterval(timerId);tick();timerId=setInterval(tick,50);
+    }
+    function tick(){
+      const remaining=Math.max(0,deadline-performance.now()),ratio=remaining/LIMIT;
+      $('#timerText').textContent=`${Math.ceil(remaining/1000)}초`;$('#timerBar').style.width=`${ratio*100}%`;$('#timerBar').classList.toggle('urgent',remaining<=5000);
+      if(remaining<=0)finishAnswer(false,true);
+    }
+    function drawQuestionImage(question,token){
+      const source={...question.source,...(question.view||{})},canvas=$('#organelleCanvas'),ctx=canvas.getContext('2d'),img=new Image();
+      img.onload=()=>{
+        if(token!==renderToken)return;
+        let sx=0,sy=0;
+        if(source.custom==='nucleus'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);
+          const cx=w/2,cy=h/2,r=154,g=ctx.createRadialGradient(cx-48,cy-55,18,cx,cy,r);g.addColorStop(0,'#ead9f2');g.addColorStop(.62,'#b98bc9');g.addColorStop(1,'#7d4f91');
+          ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.lineWidth=8;ctx.strokeStyle='#704383';ctx.stroke();ctx.beginPath();ctx.arc(cx,cy,r-13,0,Math.PI*2);ctx.lineWidth=4;ctx.strokeStyle='#d9b9df';ctx.stroke();
+          ctx.save();ctx.beginPath();ctx.arc(cx,cy,r-20,0,Math.PI*2);ctx.clip();ctx.lineCap='round';ctx.lineWidth=6;ctx.strokeStyle='rgba(105,62,128,.42)';[[[-110,-45],[-60,-100],[5,-72],[72,-118],[115,-55]],[[ -120,45],[-60,10],[0,70],[72,35],[120,85]],[[-75,115],[-35,60],[35,112],[98,65]]].forEach(points=>{ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(cx+x,cy+y):ctx.moveTo(cx+x,cy+y));ctx.stroke()});ctx.restore();
+          ctx.beginPath();ctx.arc(cx+22,cy+12,45,0,Math.PI*2);ctx.fillStyle='#684178';ctx.fill();ctx.lineWidth=5;ctx.strokeStyle='#c9a3d3';ctx.stroke();
+          for(let a=0;a<Math.PI*2;a+=Math.PI/4){const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;ctx.beginPath();ctx.arc(x,y,8,0,Math.PI*2);ctx.fillStyle='#f5eaf8';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#674078';ctx.stroke()}
+        }else if(source.custom==='ribosome'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);
+          const blob=(cx,cy,rx,ry,color,stroke)=>{ctx.beginPath();ctx.moveTo(cx-rx,cy);ctx.bezierCurveTo(cx-rx,cy-ry*.75,cx-rx*.45,cy-ry,cx,cy-ry);ctx.bezierCurveTo(cx+rx*.7,cy-ry,cx+rx,cy-ry*.42,cx+rx,cy);ctx.bezierCurveTo(cx+rx,cy+ry*.64,cx+rx*.35,cy+ry,cx,cy+ry);ctx.bezierCurveTo(cx-rx*.75,cy+ry,cx-rx,cy+ry*.55,cx-rx,cy);ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.lineWidth=7;ctx.strokeStyle=stroke;ctx.stroke()};
+          blob(300,155,175,105,'#f0c85e','#bd8432');blob(300,275,130,68,'#f6dc88','#bd8432');ctx.fillStyle='#fff';ctx.fillRect(188,220,224,23);ctx.beginPath();ctx.moveTo(205,232);ctx.quadraticCurveTo(300,205,395,232);ctx.lineWidth=7;ctx.strokeStyle='#bd8432';ctx.stroke();
+        }else if(source.custom==='granum'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);const cx=w/2,top=78;
+          for(let i=0;i<6;i++){const y=top+i*38,grad=ctx.createLinearGradient(cx-145,y,cx+145,y);grad.addColorStop(0,'#3f8f62');grad.addColorStop(.5,'#9ccc73');grad.addColorStop(1,'#347955');ctx.beginPath();ctx.ellipse(cx,y+14,145,29,0,0,Math.PI*2);ctx.fillStyle='#367f59';ctx.fill();ctx.beginPath();ctx.rect(cx-145,y,cx+145-(cx-145),16);ctx.fillStyle=grad;ctx.fill();ctx.beginPath();ctx.ellipse(cx,y,145,29,0,0,Math.PI*2);ctx.fillStyle=grad;ctx.fill();ctx.lineWidth=4;ctx.strokeStyle='#286747';ctx.stroke()}
+        }else if(source.custom==='crista'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.lineCap='round';ctx.lineJoin='round';
+          ctx.beginPath();ctx.ellipse(w/2,h/2,245,128,0,0,Math.PI*2);ctx.fillStyle='#efb67f';ctx.fill();ctx.lineWidth=14;ctx.strokeStyle='#9d5b35';ctx.stroke();ctx.beginPath();ctx.ellipse(w/2,h/2,220,105,0,0,Math.PI*2);ctx.lineWidth=7;ctx.strokeStyle='#f7dfc5';ctx.stroke();
+          ctx.beginPath();ctx.moveTo(105,180);ctx.lineTo(165,180);ctx.quadraticCurveTo(185,180,185,220);ctx.lineTo(185,260);ctx.quadraticCurveTo(185,280,205,260);ctx.lineTo(235,205);ctx.quadraticCurveTo(250,180,275,180);ctx.lineTo(325,180);ctx.quadraticCurveTo(345,180,345,140);ctx.lineTo(345,100);ctx.quadraticCurveTo(345,78,365,105);ctx.lineTo(400,160);ctx.quadraticCurveTo(414,180,440,180);ctx.lineTo(495,180);ctx.lineWidth=15;ctx.strokeStyle='#9d5b35';ctx.stroke();
+        }else if(source.custom==='vacuole'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);const g=ctx.createRadialGradient(315,175,35,350,210,250);g.addColorStop(0,'#bde9ff');g.addColorStop(1,'#65bce9');ctx.beginPath();ctx.ellipse(350,210,270,155,-.06,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.lineWidth=12;ctx.strokeStyle='#2894c8';ctx.stroke();ctx.beginPath();ctx.ellipse(350,210,285,170,-.06,0,Math.PI*2);ctx.lineWidth=5;ctx.strokeStyle='#9bd8b1';ctx.stroke();
+        }else if(source.custom==='lysosome'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);const g=ctx.createRadialGradient(235,165,25,280,210,165);g.addColorStop(0,'#eef8c9');g.addColorStop(1,'#8cc693');ctx.beginPath();ctx.arc(280,210,155,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.lineWidth=12;ctx.strokeStyle='#417d69';ctx.stroke();[[220,160],[285,135],[345,180],[235,245],[315,260],[360,235]].forEach(([x,y],i)=>{ctx.beginPath();ctx.arc(x,y,13+(i%2)*4,0,Math.PI*2);ctx.fillStyle=i%2?'#e86f55':'#dcaa3f';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#a34b45';ctx.stroke()});
+        }else if(source.custom==='nuclearPore'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.lineCap='round';ctx.lineWidth=26;ctx.strokeStyle='#8f5f9e';[[75,145,305,145],[395,145,625,145],[75,215,305,215],[395,215,625,215]].forEach(([x1,y1,x2,y2])=>{ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()});ctx.lineWidth=9;ctx.strokeStyle='#d9b9df';ctx.beginPath();ctx.arc(350,180,52,-1.2,1.2);ctx.stroke();ctx.beginPath();ctx.arc(350,180,52,1.94,4.34);ctx.stroke();
+        }else if(source.custom==='cellWall'){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.lineCap='round';ctx.lineWidth=26;ctx.strokeStyle='#8bc8ba';ctx.beginPath();ctx.moveTo(65,280);ctx.quadraticCurveTo(350,230,635,280);ctx.stroke();ctx.lineWidth=48;ctx.strokeStyle='#d7b16c';ctx.beginPath();ctx.moveTo(65,220);ctx.quadraticCurveTo(350,170,635,220);ctx.stroke();ctx.lineWidth=92;ctx.strokeStyle='#9a633d';ctx.beginPath();ctx.moveTo(65,125);ctx.quadraticCurveTo(350,75,635,125);ctx.stroke();ctx.lineWidth=12;ctx.strokeStyle='#f0d699';for(let y=92;y<=155;y+=20){ctx.beginPath();ctx.moveTo(80,y);ctx.quadraticCurveTo(350,y-45,620,y);ctx.stroke()}
+        }else if(source.layers){
+          const [w,h]=source.size;canvas.width=w;canvas.height=h;ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);source.layers.forEach(([src,dst])=>ctx.drawImage(img,...src,...dst));
+        }else{
+          const crop=source.crop||[0,0,img.naturalWidth,img.naturalHeight],[sw,sh]=[crop[2],crop[3]];[sx,sy]=crop;
+          canvas.width=sw;canvas.height=sh;ctx.clearRect(0,0,sw,sh);ctx.drawImage(img,...crop,0,0,sw,sh);
+          (source.redact||[]).forEach(([x,y,w,h,sampleX,sampleY])=>ctx.drawImage(img,sampleX,sampleY,w,h,x-sx,y-sy,w,h));
+        }
+        if(question.marker){const markers=Array.isArray(question.marker[0])?question.marker:[question.marker];markers.forEach(([x,y,label='①',color='#e34141',radius=28])=>{const offset=Math.max(17,radius*.85),bubble=radius<22?13:17;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle=color==='#2685c7'?'rgba(38,133,199,.18)':'rgba(228,65,65,.18)';ctx.fill();ctx.lineWidth=radius<22?4:6;ctx.strokeStyle=color;ctx.stroke();ctx.beginPath();ctx.arc(x+offset,y-offset,bubble,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.fillStyle='#fff';ctx.font=`bold ${bubble<15?16:20}px Malgun Gothic`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,x+offset,y-offset+1)})}
+        canvas.setAttribute('aria-label','수업 PPT의 세포소기관 그림 — 명칭 가림');beginTimer(token);
+      };
+      img.onerror=()=>beginTimer(token);img.src=`assets/${source.img}`;
+    }
+    function render(){
+      locked=false;renderToken++;
+      const token=renderToken,item=questions[index],total=questions.length,pct=Math.round((index/total)*100);
+      $('#progressText').textContent=`문제 ${index+1} / ${total}`;$('#percentText').textContent=`${pct}%`;$('#progressBar').style.width=`${pct}%`;$('#score').textContent=score;$('#streak').textContent=streak;
+      $('#wrongOverlay').classList.add('hidden');$('#typeLabel').textContent=item.type;$('#targetText').textContent=item.target;$('#question').textContent=item.q;$('#clue').textContent=item.marker?(Array.isArray(item.marker[0])?'빨간 ①과 파란 ②로 표시된 두 영역을 비교하세요.':'빨간 ① 표시가 가리키는 부분만 보고 답하세요.'):item.type==='특징·기능'?'위에 적힌 묻는 대상의 구조와 기능을 구분하세요.':'위에 적힌 묻는 대상 전체의 명칭을 고르세요.';$('#feedback').className='feedback hidden';
+      $('#timerText').textContent='준비';$('#timerBar').style.width='100%';$('#timerBar').classList.remove('urgent');
+      const choices=shuffle(item.options.map((text,original)=>({text,correct:original===item.answer})));
+      $('#answers').innerHTML=choices.map((choice,i)=>`<button class="binary-answer" data-correct="${choice.correct}">${i+1}. ${choice.text}</button>`).join('');
+      document.querySelectorAll('.binary-answer').forEach(button=>button.addEventListener('click',()=>finishAnswer(button.dataset.correct==='true',false,button)));
+      drawQuestionImage(item,token);
+    }
+    function finishAnswer(ok,timedOut=false,selected=null){
+      if(locked)return;locked=true;clearInterval(timerId);
+      const item=questions[index],remaining=Math.max(0,deadline-performance.now()),gain=ok?Math.max(1,Math.min(100,Math.ceil(remaining/LIMIT*100))):0;
+      document.querySelectorAll('.binary-answer').forEach(button=>{button.disabled=true;if(button.dataset.correct==='true')button.classList.add('correct');else if(button===selected)button.classList.add('incorrect');else button.classList.add('dim')});
+      if(ok){score+=gain;streak++;best=Math.max(best,streak)}else{wrong.push(item);streak=0}
+      $('#score').textContent=score;$('#streak').textContent=streak;
+      const f=$('#feedback'),correct=item.options[item.answer];
+      if(ok){f.className='feedback good';f.innerHTML=`<b>정답 · +${gain}점</b><span>${item.explain}</span>`;nextId=setTimeout(advanceQuestion,800)}
+      else{f.className='feedback hidden';$('#wrongMark').textContent=timedOut?'시간 초과':'오답';$('#wrongCorrect').textContent=`정답: ${correct}`;$('#wrongExplain').textContent=item.explain;const overlay=$('#wrongOverlay'),bar=$('#wrongProgress');overlay.classList.remove('hidden');bar.style.animation='none';void bar.offsetWidth;bar.style.animation='wrong-countdown 5s linear forwards';nextId=setTimeout(advanceQuestion,5000)}
+    }
+    function advanceQuestion(){clearTimeout(nextId);$('#wrongOverlay').classList.add('hidden');if(++index>=questions.length)finish();else render()}
+    function finish(){
+      clearInterval(timerId);clearTimeout(nextId);const correct=questions.length-wrong.length,max=questions.length*100,pct=Math.round(correct/questions.length*100);
+      $('#progressBar').style.width='100%';$('#finalScore').textContent=score.toLocaleString();$('#maxScore').textContent=` / ${max.toLocaleString()}점`;$('#correctCount').textContent=correct;$('#wrongCount').textContent=wrong.length;$('#bestStreak').textContent=best;
+      $('#resultBadge').textContent=pct===100?'🏆':pct>=80?'⚡':pct>=60?'🌱':'⏱️';$('#resultTitle').textContent=pct===100?'전부 맞혔습니다!':pct>=80?'빠르고 정확합니다!':pct>=60?'조금만 더 연습해요!':'오답을 다시 확인해요!';$('#resultMessage').textContent=`${questions.length}문제 중 ${correct}문제 정답 · 총 ${score.toLocaleString()}점`;$('#bragMessage').classList.toggle('hidden',score<1500);
+      $('#retryWrong').disabled=wrong.length===0;$('#retryWrong').textContent=wrong.length?`오답 ${wrong.length}개 다시 풀기`:'오답 없음';show('result');
+    }
+    $('#startBtn').addEventListener('click',()=>start());
+    $('#wrongNext').addEventListener('click',advanceQuestion);
+    document.addEventListener('keydown',e=>{if(!locked&&!screens.quiz.classList.contains('hidden')&&(e.key==='1'||e.key==='2'))document.querySelectorAll('.binary-answer')[Number(e.key)-1]?.click()});
+    $('#restart').addEventListener('click',()=>{clearInterval(timerId);clearTimeout(nextId);show('start')});$('#retryWrong').addEventListener('click',()=>{if(wrong.length)start(wrong)});
+  </script>
+</body>
+</html>
